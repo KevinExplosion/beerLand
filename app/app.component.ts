@@ -11,7 +11,9 @@ import { Keg } from './keg.model';
   inputs: ['kegList'],
   outputs: ['onKegSelect'],
   template: `
-  <h3 *ngFor="#currentKeg of kegList" (click)="kegClicked(currentKeg)">
+  <h3 *ngFor="#currentKeg of kegList"
+   (click)="kegClicked(currentKeg)"
+   [class.selected]="currentKeg === selectedKeg">
     {{ currentKeg.brand }}
   </h3>
   `
@@ -19,11 +21,13 @@ import { Keg } from './keg.model';
 export class KegListComponent {
   public kegList: Keg[]; //defines a public property (kegList) to hold an array of Keg models
   public onKegSelect: EventEmitter<Keg>; //public property for child component's output
+  public selectedKeg: Keg; //keeps track of which keg obj was clicked last
   constructor() {
     this.onKegSelect = new EventEmitter();
   }
   kegClicked(clickedKeg: Keg): void {
     console.log('child', clickedKeg);
+    this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
   }
 }
