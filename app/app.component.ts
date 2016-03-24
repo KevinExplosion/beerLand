@@ -26,10 +26,10 @@ export class AppComponent {
   public kegs: Keg[];
   constructor(){
     this.kegs = [
-      new Keg("Newcastle Brown Ale", 180, 4, 0),
-      new Keg("Montucky Cold Snack", 150, 3, 1),
-      new Keg("Yuengling", 200, 4.2, 2),
-      new Keg("Tucher", 180, 4, 3)
+      new Keg("Newcastle Brown Ale", 180, 4, 0, "Delicious dark beer, dude"),
+      new Keg("Montucky Cold Snack", 150, 3, 1, "Cold, refreshing, yumness"),
+      new Keg("Yuengling", 200, 4.2, 2, "Good old, east coast favorite"),
+      new Keg("Tucher", 180, 4, 3, "Who cares? Chug!")
     ];
     //"kegs" sets a public property = to an empty array called Keg
       //"this.kegs = [content]" creates an array of object

@@ -6,8 +6,9 @@ import { Component } from 'angular2/core';
 export class Keg {
   //properties OUTSIDE parends will be applied universally to all objects
     //things like empty, instock, done or not done, etc
+  public volume: number = 124
   public empty: boolean = false
 
   //properties INSIDE parends are unique to each object
-  constructor(public brand: string, public price: number, public abv: number, public id: number) {}
+  constructor(public brand: string, public price: number, public abv: number, public id: number, public description: string) {}
 }

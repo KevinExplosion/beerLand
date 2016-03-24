@@ -1,6 +1,8 @@
 import { Component, EventEmitter } from 'angular2/core';
 import { KegComponent } from './keg.component';
 import { Keg } from './keg.model';
+import { EditKegDetailsComponent } from './edit-keg-details.component';
+import { NewKegComponent } from './new-keg.component';
 
 //This is a child of the app component
 //once it's working, it will be moved to its own file
@@ -10,8 +12,18 @@ import { Keg } from './keg.model';
     //sets inputs equal to an array with one string in it 'kegList'
     inputs: ['kegList'],
   outputs: ['onKegSelect'],
-  directives: [KegComponent],
-  templateUrl: 'app/keg-list.component.html'
+  directives: [KegComponent, EditKegDetailsComponent, NewKegComponent],
+  template: `
+    <keg-display *ngFor="#currentKeg of kegList"
+     (click)="kegClicked(currentKeg)"
+     [class.selected]="currentKeg === selectedKeg"
+     [keg] = "currentKeg">
+    </keg-display>
+    <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
+    </edit-keg-details>
+    <hr>
+    <new-keg></new-keg>
+  `
 })
 export class KegListComponent {
   public kegList: Keg[]; //defines a public property (kegList) to hold an array of Keg models
