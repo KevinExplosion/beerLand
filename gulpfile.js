@@ -129,8 +129,8 @@ gulp.task('build', ['ts'], function(){
 
 /*
 - clone repo
-- npm install
-- bower install
+- npm install (grabbing instructions from package.json)
+- bower install (from bower.json)
 - install globals if needed (gulp, bower, sass, typescript, typescript packages.)
   - npm install gulp -g
   - npm install bower -g
@@ -139,4 +139,5 @@ gulp.task('build', ['ts'], function(){
   - apm install atom-typescript
 - gulp build
 - gulp serve
+- tsc -w?
 */

@@ -1,45 +1,13 @@
 import { Component, EventEmitter } from 'angular2/core';
+import { KegListComponent } from './keg-list.component';
 import { Keg } from './keg.model';
-
-
-//This is a parent of the app component
-//once it's working, it will be moved to its own file
-@Component({
-  selector: 'keg-list',
-  //tells component which kegs to display
-    //sets inputs equal to an array with one string in it 'kegList'
-  inputs: ['kegList'],
-  outputs: ['onKegSelect'],
-  template: `
-  <h3 *ngFor="#currentKeg of kegList"
-   (click)="kegClicked(currentKeg)"
-   [class.selected]="currentKeg === selectedKeg">
-    {{ currentKeg.brand }}
-  </h3>
-  `
-})
-export class KegListComponent {
-  public kegList: Keg[]; //defines a public property (kegList) to hold an array of Keg models
-  public onKegSelect: EventEmitter<Keg>; //public property for child component's output
-  public selectedKeg: Keg; //keeps track of which keg obj was clicked last
-  constructor() {
-    this.onKegSelect = new EventEmitter();
-  }
-  kegClicked(clickedKeg: Keg): void {
-    console.log('child', clickedKeg);
-    this.selectedKeg = clickedKeg;
-    this.onKegSelect.emit(clickedKeg);
-  }
-}
-//<keg-list> is the component selector, and will be loaded in the parent template (AppComponent)
-  //This template now holds the *ngFor loop
 
 //component annotation (also called a DECORATOR)
   //the HTML area in green is also known as THE VIEW
     //The view has access to class&properties from Controller Class (such as keg.brand)
 @Component({
-  selector: 'my-app',
-  directives: [KegListComponent],  //array list; loads child components
+    selector: 'my-app',
+    directives: [KegListComponent],  //array list; loads child components
   template: `
   <div class="container">
     <h1>Beer Land App!</h1>

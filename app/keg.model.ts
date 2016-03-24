@@ -1,3 +1,5 @@
+import { Component } from 'angular2/core';
+
 //this is a MODEL
   //declares a CLASS
     //holds PROPERTIES
