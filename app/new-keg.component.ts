@@ -4,16 +4,7 @@ import {Keg} from './keg.model';
 @Component({
   selector: 'new-keg',
   outputs: ['onSubmitNewKeg'],
-  template: `
-  <div class="keg-form">
-    <h3>Add a new Keg:</h3>
-    <input placeholder="Brand" class="col-sm-8 input-lg" #newBrand>
-    <input placeholder="Price" class="col-sm-8 input-md" #newPrice>
-    <input placeholder="ABV%" class="col-sm-8 input-sm" #newAbv>
-    <input placeholder="Description" class="col-sm-8 input-md" #newDescription>
-    <button (click)="addKeg(newBrand, newPrice, newAbv, newDescription)">Add</button>
-  </div>
-  `
+  templateUrl: 'app/new-keg.component.html'
 })
 export class NewKegComponent {
   public onSubmitNewKeg: EventEmitter<any>;

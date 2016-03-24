@@ -1,0 +1,52 @@
+
+<div class="keg-form form-group">
+  <div class="row">
+
+    <div class="col-md-3">
+      <h3>Add a new Keg</h3>
+    </div>
+
+    <div class="col-md-3">
+    </div>
+
+    <div class="col-md-3">
+    </div>
+
+    <div class="col-md-3">
+    </div>
+
+  </div>
+
+<div class="row">
+  <div class="col-md-3">
+    <input placeholder="Brand" class="input-lg" #newBrand>
+  </div>
+
+  <div class="col-md-3">
+    <input placeholder="Price" class="input-lg" #newPrice>
+  </div>
+
+  <div class="col-md-3">
+    <input placeholder="ABV%" class="input-lg" #newAbv>
+  </div>
+
+  <div class="col-md-3">
+    <input placeholder="Description" class="input-lg" #newDescription>
+  </div>
+
+</div>
+
+<br>
+
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-md-4">
+      <button (click)="addKeg(newBrand, newPrice, newAbv, newDescription)">Add</button>
+    </div>
+
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>
