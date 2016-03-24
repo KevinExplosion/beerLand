@@ -1,3 +1,5 @@
+///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
+
 import { Component, EventEmitter } from 'angular2/core';
 import { KegListComponent } from './keg-list.component';
 import { Keg } from './keg.model';
@@ -26,10 +28,10 @@ export class AppComponent {
   public kegs: Keg[];
   constructor(){
     this.kegs = [
-      new Keg("Newcastle Brown Ale", 180, 4, 0, "Delicious dark beer, dude"),
-      new Keg("Montucky Cold Snack", 150, 3, 1, "Cold, refreshing, yumness"),
-      new Keg("Yuengling", 200, 4.2, 2, "Good old, east coast favorite"),
-      new Keg("Tucher", 180, 4, 3, "Who cares? Chug!")
+      new Keg("Newcastle Brown Ale", 180, 4, "Delicious dark beer, dude", 0),
+      new Keg("Montucky Cold Snack", 150, 3, "Cold, refreshing, yumness", 1),
+      new Keg("Yuengling", 200, 4.2, "Good old, east coast favorite", 2),
+      new Keg("Tucher", 180, 4, "Who cares? Chug!", 3)
     ];
     //"kegs" sets a public property = to an empty array called Keg
       //"this.kegs = [content]" creates an array of object

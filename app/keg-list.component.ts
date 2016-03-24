@@ -22,7 +22,7 @@ import { NewKegComponent } from './new-keg.component';
     <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
     </edit-keg-details>
     <hr>
-    <new-keg></new-keg>
+    <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
   `
 })
 export class KegListComponent {
@@ -36,6 +36,12 @@ export class KegListComponent {
     console.log('child', clickedKeg);
     this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
+  }
+  createKeg(kegArray: Array<any>): void {
+    this.kegList.push(
+      new Keg(kegArray[0], kegArray[1], kegArray[2], kegArray[3], this.kegList.length)
+    );
+
   }
 }
 //<keg-list> is the component selector, and will be loaded in the parent template (AppComponent)

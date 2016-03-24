@@ -10,5 +10,5 @@ export class Keg {
   public empty: boolean = false
 
   //properties INSIDE parends are unique to each object
-  constructor(public brand: string, public price: number, public abv: number, public id: number, public description: string) {}
+  constructor(public brand: string, public price: number, public abv: number, public description: string, public id: number) {}
 }
