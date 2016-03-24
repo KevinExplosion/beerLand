@@ -1,0 +1,19 @@
+
+<div class="container">
+  <div class="menu-box">
+    <h1>Beer Land App!</h1>
+      <div class="row barleyLogo">
+        <div class="col-md-6">
+          <img href="/../resources/images/barleyLeft.png" alt="barley">
+        </div>
+
+        <div class="col-md-6">
+
+        </div>
+      </div>
+      <keg-list
+        [kegList]="kegs"
+        (onKegSelect)="kegWasSelected($event)">
+      </keg-list>
+  </div>
+</div>

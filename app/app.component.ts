@@ -10,15 +10,7 @@ import { Keg } from './keg.model';
 @Component({
     selector: 'my-app',
     directives: [KegListComponent],  //array list; loads child components
-  template: `
-  <div class="container">
-    <h1>Beer Land App!</h1>
-      <keg-list
-        [kegList]="kegs"
-        (onKegSelect)="kegWasSelected($event)">
-      </keg-list>
-  </div>
-  `
+  templateUrl: 'app/app.component.html'
 })
 //class decloration and/or (component)CONTROLLER CLASS DEFINITION
   //The component's class declaration holds the data and methods needed to make the template HTML functional.

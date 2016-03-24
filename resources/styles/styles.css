@@ -1,5 +1,26 @@
+body {
+  background-image: url("/resources/images/beerBackground.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.menu-box {
+  margin: 20px;
+  padding: 15px 45px 10px 10px;
+  border-radius: 5px;
+  background-image: url("/resources/images/menu-box-background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 h1 {
   color: blue;
+  border-bottom: url("/resources/images/barleyLeft.png");
+}
+
+h1:first-letter{
+  font-size: 50px;
+  font-weight: bold;
 }
 
 .selected {
